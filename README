@@ -1,6 +1,7 @@
 This is the result of the test:
 
 $ ./manage.py test my_app
+Django version: (1, 7, 4, 'final', 0)
 Creating test database for alias 'default'...
 F..
 ======================================================================
