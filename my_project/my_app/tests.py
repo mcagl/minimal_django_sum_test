@@ -1,8 +1,12 @@
 import datetime
 from decimal import Decimal
+import django
 from django.db.models import Sum
 from django.test import TestCase
 from my_app import models as app_models
+
+
+print "Django version:", django.VERSION
 
 
 class SumTest(TestCase):
