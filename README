@@ -1,4 +1,4 @@
-I setup this minimal Django project to demonstrate this problem, and I linked it in this ticket on djangoproject.com: https://code.djangoproject.com/ticket/24385
+I setup a minimal Django project to demonstrate a problem with aggregate(Sum()), and I linked it in this ticket on djangoproject.com: https://code.djangoproject.com/ticket/24385
 
 This is the result of the test:
 
