@@ -45,7 +45,7 @@ class SumTest(TestCase):
         self.assertEqual(app_models.Tag.objects.count(), 4)
         self.assertEqual(app_models.Row.objects.count(), 5)
 
-    def test_sum(self):
+    def test_django_sum(self):
         # Filter for Row objects with tags in [Tag0, Tag1], and add distinct()
         rows = app_models.Row.objects.filter(tags__in=[self.t0, self.t1]).distinct()
         # Assert that we get a queryset with 3 Row objects
@@ -53,3 +53,10 @@ class SumTest(TestCase):
         # Use Sum() to sum the amount of these 3 Row objects, each with amount=10.
         # Do we get 30?
         self.assertEqual(rows.aggregate(Sum('amount'))['amount__sum'], 30)
+
+    def test_python_sum(self):
+        # Filter for Row objects with tags in [Tag0, Tag1], and add distinct()
+        rows = app_models.Row.objects.filter(tags__in=[self.t0, self.t1]).distinct()
+        # Assert that we get a queryset with 3 Row objects
+        self.assertEqual(rows.count(), 3)
+        self.assertEqual(sum([x.amount for x in rows]), 30)
